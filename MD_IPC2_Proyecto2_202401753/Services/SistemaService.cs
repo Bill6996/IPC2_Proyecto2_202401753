@@ -104,63 +104,107 @@ namespace MD_IPC2_Proyecto2_202401753.Services
 
                 int dronesAgregados = 0;
                 XmlNodeList drones = doc.SelectNodes("//listaDrones/dron");
-                foreach (XmlNode dron in drones)
+                if (drones != null)
                 {
-                    string nombre = dron.InnerText.Trim();
-                    if (AgregarDron(nombre))
-                        dronesAgregados++;
+                    foreach (XmlNode dron in drones)
+                    {
+                        string nombre = dron.InnerText.Trim();
+                        if (!string.IsNullOrEmpty(nombre) && AgregarDron(nombre))
+                            dronesAgregados++;
+                    }
                 }
 
                 int sistemasAgregados = 0;
                 XmlNodeList sistemas = doc.SelectNodes("//listaSistemasDrones/sistemaDrones");
-                foreach (XmlNode sistemaNode in sistemas)
+                if (sistemas != null)
                 {
-                    string nombreSistema = sistemaNode.Attributes["nombre"].Value.Trim();
-                    int alturaMaxima = int.Parse(sistemaNode.SelectSingleNode("alturaMaxima").InnerText.Trim());
-                    int cantidadDrones = int.Parse(sistemaNode.SelectSingleNode("cantidadDrones").InnerText.Trim());
-
-                    SistemaDrones sistema = new SistemaDrones(nombreSistema, alturaMaxima, cantidadDrones);
-
-                    XmlNodeList contenidos = sistemaNode.SelectNodes("contenido");
-                    foreach (XmlNode contenidoNode in contenidos)
+                    foreach (XmlNode sistemaNode in sistemas)
                     {
-                        string nombreDron = contenidoNode.SelectSingleNode("dron").InnerText.Trim();
-                        ContenidoDron contenido = new ContenidoDron(nombreDron);
-
-                        XmlNodeList alturas = contenidoNode.SelectNodes("alturas/altura");
-                        foreach (XmlNode alturaNode in alturas)
+                        try
                         {
-                            int valorAltura = int.Parse(alturaNode.Attributes["valor"].Value.Trim());
-                            string letra = alturaNode.InnerText.Trim();
-                            contenido.AgregarAltura(valorAltura, letra);
+                            string nombreSistema = sistemaNode.Attributes["nombre"].Value.Trim();
+                            int alturaMaxima = int.Parse(sistemaNode.SelectSingleNode("alturaMaxima").InnerText.Trim());
+                            int cantidadDrones = int.Parse(sistemaNode.SelectSingleNode("cantidadDrones").InnerText.Trim());
+
+                            SistemaDrones sistema = new SistemaDrones(nombreSistema, alturaMaxima, cantidadDrones);
+
+                            XmlNodeList contenidos = sistemaNode.SelectNodes("contenido");
+                            if (contenidos != null)
+                            {
+                                foreach (XmlNode contenidoNode in contenidos)
+                                {
+                                    XmlNode dronNodo = contenidoNode.SelectSingleNode("dron");
+                                    if (dronNodo == null) continue;
+
+                                    string nombreDron = dronNodo.InnerText.Trim();
+
+                                    // Si el dron no existe en la lista global, lo agregamos
+                                    AgregarDron(nombreDron);
+
+                                    ContenidoDron contenido = new ContenidoDron(nombreDron);
+
+                                    XmlNodeList alturas = contenidoNode.SelectNodes("alturas/altura");
+                                    if (alturas != null)
+                                    {
+                                        foreach (XmlNode alturaNode in alturas)
+                                        {
+                                            int valorAltura = int.Parse(alturaNode.Attributes["valor"].Value.Trim());
+                                            string letra = alturaNode.InnerText;
+                                            // Solo trim de saltos de línea, NO de espacios
+                                            letra = letra.Replace("\r", "").Replace("\n", "");
+                                            if (letra == "") letra = " ";
+                                            contenido.AgregarAltura(valorAltura, letra);
+                                        }
+                                    }
+
+                                    sistema.AgregarContenidoDron(contenido);
+                                }
+                            }
+
+                            if (AgregarSistemaDrones(sistema))
+                                sistemasAgregados++;
                         }
-
-                        sistema.AgregarContenidoDron(contenido);
+                        catch (Exception exSistema)
+                        {
+                            Console.WriteLine($"Error cargando sistema: {exSistema.Message}");
+                        }
                     }
-
-                    if (AgregarSistemaDrones(sistema))
-                        sistemasAgregados++;
                 }
 
                 int mensajesAgregados = 0;
                 XmlNodeList mensajes = doc.SelectNodes("//listaMensajes/Mensaje");
-                foreach (XmlNode mensajeNode in mensajes)
+                if (mensajes != null)
                 {
-                    string nombreMensaje = mensajeNode.Attributes["nombre"].Value.Trim();
-                    string nombreSistema = mensajeNode.SelectSingleNode("sistemaDrones").InnerText.Trim();
-
-                    Mensaje mensaje = new Mensaje(nombreMensaje, nombreSistema);
-
-                    XmlNodeList instrucciones = mensajeNode.SelectNodes("instrucciones/instruccion");
-                    foreach (XmlNode instrNode in instrucciones)
+                    foreach (XmlNode mensajeNode in mensajes)
                     {
-                        string nombreDron = instrNode.Attributes["dron"].Value.Trim();
-                        int altura = int.Parse(instrNode.InnerText.Trim());
-                        mensaje.AgregarInstruccion(nombreDron, altura);
-                    }
+                        try
+                        {
+                            string nombreMensaje = mensajeNode.Attributes["nombre"].Value.Trim();
+                            XmlNode sistemaNodo = mensajeNode.SelectSingleNode("sistemaDrones");
+                            if (sistemaNodo == null) continue;
 
-                    if (AgregarMensaje(mensaje))
-                        mensajesAgregados++;
+                            string nombreSistema = sistemaNodo.InnerText.Trim();
+                            Mensaje mensaje = new Mensaje(nombreMensaje, nombreSistema);
+
+                            XmlNodeList instrucciones = mensajeNode.SelectNodes("instrucciones/instruccion");
+                            if (instrucciones != null)
+                            {
+                                foreach (XmlNode instrNode in instrucciones)
+                                {
+                                    string nombreDron = instrNode.Attributes["dron"].Value.Trim();
+                                    int altura = int.Parse(instrNode.InnerText.Trim());
+                                    mensaje.AgregarInstruccion(nombreDron, altura);
+                                }
+                            }
+
+                            if (AgregarMensaje(mensaje))
+                                mensajesAgregados++;
+                        }
+                        catch (Exception exMensaje)
+                        {
+                            Console.WriteLine($"Error cargando mensaje: {exMensaje.Message}");
+                        }
+                    }
                 }
 
                 return $"XML cargado correctamente. Drones: {dronesAgregados}, Sistemas: {sistemasAgregados}, Mensajes: {mensajesAgregados}";
@@ -393,6 +437,8 @@ namespace MD_IPC2_Proyecto2_202401753.Services
 
                         XmlElement mensajeRecibidoElem = doc.CreateElement("mensajeRecibido");
                         mensajeRecibidoElem.InnerText = resultado.MensajeRecibido;
+                        if (string.IsNullOrEmpty(mensajeRecibidoElem.InnerText))
+                            mensajeRecibidoElem.InnerText = " ";
                         mensajeElem.AppendChild(mensajeRecibidoElem);
 
                         XmlElement instruccionesElem = doc.CreateElement("instrucciones");

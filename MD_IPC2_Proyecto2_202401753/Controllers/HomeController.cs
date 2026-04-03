@@ -35,18 +35,39 @@ namespace MD_IPC2_Proyecto2_202401753.Controllers
         {
             if (archivo == null || archivo.Length == 0)
             {
-                ViewBag.Mensaje = "selecciona un archivo XML.";
+                ViewBag.Mensaje = "selecciona un archivo XML válido.";
                 return View();
             }
 
-            string ruta = Path.Combine(Path.GetTempPath(), archivo.FileName);
-            using (var stream = new FileStream(ruta, FileMode.Create))
+            if (!archivo.FileName.EndsWith(".xml"))
             {
-                archivo.CopyTo(stream);
+                ViewBag.Mensaje = " El archivo debe ser de tipo XML.";
+                return View();
             }
 
-            string resultado = _servicio.CargarXML(ruta);
-            ViewBag.Mensaje = resultado;
+            try
+            {
+                // Guardar en carpeta temporal con nombre único para evitar conflictos
+                string nombreArchivo = $"entrada_{DateTime.Now.Ticks}.xml";
+                string ruta = Path.Combine(Path.GetTempPath(), nombreArchivo);
+
+                using (var stream = new FileStream(ruta, FileMode.Create))
+                {
+                    archivo.CopyTo(stream);
+                }
+
+                string resultado = _servicio.CargarXML(ruta);
+                ViewBag.Mensaje = ". " + resultado;
+
+                // Limpiar archivo temporal
+                if (System.IO.File.Exists(ruta))
+                    System.IO.File.Delete(ruta);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = $" Error: {ex.Message}";
+            }
+
             return View();
         }
 
@@ -55,23 +76,47 @@ namespace MD_IPC2_Proyecto2_202401753.Controllers
         // ─────────────────────────────────────────
         public IActionResult GenerarXML()
         {
-            string ruta = Path.Combine(Path.GetTempPath(), "salida.xml");
-            string resultado = _servicio.GenerarXMLSalida(ruta);
-            ViewBag.Mensaje = resultado;
-            ViewBag.Ruta = ruta;
+            try
+            {
+                string ruta = Path.Combine(Path.GetTempPath(), "salida.xml");
+                string resultado = _servicio.GenerarXMLSalida(ruta);
+                ViewBag.Mensaje = "" + resultado;
+                ViewBag.Listo = true;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = $" Error: {ex.Message}";
+                ViewBag.Listo = false;
+            }
             return View();
         }
 
         public IActionResult DescargarXML()
         {
-            string ruta = Path.Combine(Path.GetTempPath(), "salida.xml");
-            if (!System.IO.File.Exists(ruta))
+            try
             {
-                TempData["Error"] = "Primero genera el XML de salida.";
+                string ruta = Path.Combine(Path.GetTempPath(), "salida.xml");
+
+                if (!System.IO.File.Exists(ruta))
+                {
+                    // Intentar generarlo primero
+                    string resultado = _servicio.GenerarXMLSalida(ruta);
+                }
+
+                if (System.IO.File.Exists(ruta))
+                {
+                    byte[] bytes = System.IO.File.ReadAllBytes(ruta);
+                    return File(bytes, "application/xml", "salida.xml");
+                }
+
+                TempData["Error"] = "No se pudo generar el archivo.";
                 return RedirectToAction("GenerarXML");
             }
-            byte[] bytes = System.IO.File.ReadAllBytes(ruta);
-            return File(bytes, "application/xml", "salida.xml");
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Error: {ex.Message}";
+                return RedirectToAction("GenerarXML");
+            }
         }
 
         public IActionResult Inicializar()

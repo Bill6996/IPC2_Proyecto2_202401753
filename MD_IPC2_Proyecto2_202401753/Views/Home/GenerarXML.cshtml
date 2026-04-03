@@ -1,19 +1,35 @@
 ﻿@{
-    ViewData["Title"] = "Generar XML";
+    ViewData["Title"] = "Generar XML de Salida";
 }
-<div class="container mt-4">
+<div class="container mt-2">
     <h2> Generar XML de Salida</h2>
     <hr />
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <p>
+                Al generar el XML de salida, el sistema calculará el tiempo óptimo
+                para todos los mensajes registrados y los exportará en formato XML.
+            </p>
+            <a href="/Home/GenerarXML" class="btn btn-primary">
+                 Generar XML ahora
+            </a>
+        </div>
+    </div>
+
     @if (ViewBag.Mensaje != null)
     {
-        <div class="alert alert-success">
+        <div class="alert @(ViewBag.Listo == true ? "alert-success" : "alert-danger")">
             @ViewBag.Mensaje
         </div>
-        <a href="/Home/DescargarXML" class="btn btn-success"> Descargar salida.xml</a>
     }
-    else
+
+    @if (ViewBag.Listo == true)
     {
-        <a href="/Home/GenerarXML" class="btn btn-primary">Generar XML ahora</a>
+        <a href="/Home/DescargarXML" class="btn btn-success btn-lg">
+             Descargar salida.xml
+        </a>
     }
-    <a href="/" class="btn btn-secondary ms-2">Volver</a>
+
+    <a href="/" class="btn btn-secondary ms-2">Volver al Inicio</a>
 </div>

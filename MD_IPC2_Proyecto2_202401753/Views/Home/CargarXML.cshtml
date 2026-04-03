@@ -1,22 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Cargar XML";
 }
-<div class="container mt-4">
-    <h2> Cargar Archivo XML</h2>
+<div class="container mt-2">
+    <h2> Cargar Archivo XML de Entrada</h2>
     <hr />
-    <form method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label class="form-label">Selecciona el archivo XML de entrada:</label>
-            <input type="file" name="archivo" accept=".xml" class="form-control" />
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <p>
+                Selecciona el archivo <strong>XML de entrada</strong> con la configuración
+                de drones, sistemas y mensajes. Se puede Cargar muchos archivos
+            </p>
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Archivo XML:</label>
+                    <input type="file" name="archivo" accept=".xml" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary"> Cargar XML</button>
+                <a href="/" class="btn btn-secondary ms-2">Volver</a>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Cargar XML</button>
-        <a href="/" class="btn btn-secondary">Volver</a>
-    </form>
+    </div>
 
     @if (ViewBag.Mensaje != null)
     {
-        <div class="alert alert-info mt-3">
+        <div class="alert @(ViewBag.Mensaje.ToString().StartsWith("") ? "alert-success" : "alert-warning")">
             @ViewBag.Mensaje
         </div>
+
+        @if (ViewBag.Mensaje.ToString().StartsWith(""))
+        {
+            <div class="d-flex gap-2 mt-3">
+                <a href="/Home/Drones" class="btn btn-outline-primary">Ver Drones</a>
+                <a href="/Home/SistemasDrones" class="btn btn-outline-info">Ver Sistemas</a>
+                <a href="/Home/Mensajes" class="btn btn-outline-danger">Ver Mensajes</a>
+            </div>
+        }
     }
 </div>
+
+
