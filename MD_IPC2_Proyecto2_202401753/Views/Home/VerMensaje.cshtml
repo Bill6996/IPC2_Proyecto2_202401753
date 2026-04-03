@@ -5,7 +5,7 @@
     ResultadoMensaje resultado = ViewBag.Resultado;
 }
 <div class="container mt-4">
-    <h2>📨 Detalle del Mensaje</h2>
+    <h2> Detalle del Mensaje</h2>
     <hr />
     @if (resultado != null)
     {
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <h4>📊 Diagrama de Instrucciones (Graphviz)</h4>
+        <h4> Diagrama de Instrucciones (Graphviz)</h4>
         @if (!string.IsNullOrEmpty(ViewBag.Imagen as string))
         {
             <img src="data:image/png;base64,@ViewBag.Imagen"
@@ -33,7 +33,7 @@
         else
         {
             <div class="alert alert-warning">
-                No se pudo generar el grafo. Verifica que Graphviz esté instalado.
+                No se pudo generar el grafo. Verifica que Graphviz esté instalado en el cmd.
             </div>
         }
     }

@@ -27,6 +27,13 @@ namespace MD_IPC2_Proyecto2_202401753.Services
             listaMensajes = new ListaEnlazada();
         }
 
+        public void Inicializar()
+        {
+            listaDrones = new ListaEnlazada();
+            listaSistemasDrones = new ListaEnlazada();
+            listaMensajes = new ListaEnlazada();
+        }
+
         // ─────────────────────────────────────────
         // GETTERS
         // ─────────────────────────────────────────

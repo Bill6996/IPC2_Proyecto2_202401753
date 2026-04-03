@@ -35,7 +35,7 @@ namespace MD_IPC2_Proyecto2_202401753.Controllers
         {
             if (archivo == null || archivo.Length == 0)
             {
-                ViewBag.Mensaje = "Por favor selecciona un archivo XML.";
+                ViewBag.Mensaje = "selecciona un archivo XML.";
                 return View();
             }
 
@@ -74,6 +74,13 @@ namespace MD_IPC2_Proyecto2_202401753.Controllers
             return File(bytes, "application/xml", "salida.xml");
         }
 
+        public IActionResult Inicializar()
+        {
+            _servicio.Inicializar();
+            TempData["Mensaje"] = "Sistema inicializado correctamente.";
+            return RedirectToAction("Index");
+        }
+
         // ─────────────────────────────────────────
         // GESTIÓN DE DRONES
         // ─────────────────────────────────────────
@@ -97,7 +104,7 @@ namespace MD_IPC2_Proyecto2_202401753.Controllers
             bool agregado = _servicio.AgregarDron(nombre.Trim());
             TempData["Mensaje"] = agregado
                 ? $"Dron '{nombre}' agregado correctamente."
-                : $"Ya existe un dron con el nombre '{nombre}'.";
+                : $"Ya existe un dron con el nombre '{nombre}', cambia el nombre.";
 
             return RedirectToAction("Drones");
         }

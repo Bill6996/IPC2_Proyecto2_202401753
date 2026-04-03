@@ -2,7 +2,7 @@
     ViewData["Title"] = "Visualizar Sistema";
 }
 <div class="container mt-4">
-    <h2>📊 Sistema: @ViewBag.Nombre</h2>
+    <h2>Sistema: @ViewBag.Nombre</h2>
     <hr />
     @if (!string.IsNullOrEmpty(ViewBag.Imagen as string))
     {
@@ -12,7 +12,7 @@
     else
     {
         <div class="alert alert-warning">
-            No se pudo generar el grafo. Verifica que Graphviz esté instalado.
+            No se pudo generar el grafo. Verifica que Graphviz esté instalado en el cmd.
         </div>
     }
     <br /><br />

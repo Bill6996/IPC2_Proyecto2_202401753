@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<respuesta>
+  <listaMensajes>
+    <mensaje nombre="MensajeIPC2">
+      <sistemaDrones>SistemaIPC</sistemaDrones>
+      <tiempoOptimo>7</tiempoOptimo>
+      <mensajeRecibido>IPC2</mensajeRecibido>
+      <instrucciones>
+        <tiempo valor="1">
+          <acciones>
+            <dron nombre="DronX">Subir</dron>
+            <dron nombre="DronY">Subir</dron>
+            <dron nombre="DronZ">Subir</dron>
+          </acciones>
+        </tiempo>
+        <tiempo valor="2">
+          <acciones>
+            <dron nombre="DronX">Subir</dron>
+            <dron nombre="DronY">Subir</dron>
+            <dron nombre="DronZ">Subir</dron>
+          </acciones>
+        </tiempo>
+        <tiempo valor="3">
+          <acciones>
+            <dron nombre="DronX">Emitir luz</dron>
+            <dron nombre="DronY">Subir</dron>
+            <dron nombre="DronZ">Esperar</dron>
+          </acciones>
+        </tiempo>
+        <tiempo valor="4">
+          <acciones>
+            <dron nombre="DronX">Esperar</dron>
+            <dron nombre="DronY">Emitir luz</dron>
+            <dron nombre="DronZ">Esperar</dron>
+          </acciones>
+        </tiempo>
+        <tiempo valor="5">
+          <acciones>
+            <dron nombre="DronX">Esperar</dron>
+            <dron nombre="DronY">Bajar</dron>
+            <dron nombre="DronZ">Emitir luz</dron>
+          </acciones>
+        </tiempo>
+        <tiempo valor="6">
+          <acciones>
+            <dron nombre="DronX">Esperar</dron>
+            <dron nombre="DronY">Bajar</dron>
+            <dron nombre="DronZ">Esperar</dron>
+          </acciones>
+        </tiempo>
+        <tiempo valor="7">
+          <acciones>
+            <dron nombre="DronX">Esperar</dron>
+            <dron nombre="DronY">Emitir luz</dron>
+            <dron nombre="DronZ">Esperar</dron>
+          </acciones>
+        </tiempo>
+      </instrucciones>
+    </mensaje>
+  </listaMensajes>
+</respuesta>

@@ -1,22 +1,81 @@
 ﻿@{
     ViewData["Title"] = "Ayuda";
 }
-<div class="container mt-4">
-    <h2>ℹ️ Ayuda</h2>
+<div class="container mt-2">
+    <h2> !! Ayuda</h2>
     <hr />
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Información del Estudiante</h5>
-            <p><strong>Nombre:</strong> Tu Nombre Aquí</p>
-            <p><strong>Carnet:</strong> 202401753</p>
-            <p><strong>Curso:</strong> Introducción a la Programación y Computación 2</p>
-            <p>
-                <strong>Repositorio:</strong>
-                <a href="https://github.com/TuUsuario/IPC2_Proyecto2_202401753"
-                   target="_blank">
-                    Ver en GitHub
-                </a>
-            </p>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header fw-bold" style="background:#1a1a2e; color:white">
+                     Información del Estudiante
+                </div>
+                <div class="card-body">
+                    <table class="table table-borderless mb-0">
+                        <tr>
+                            <td><strong>Nombre:</strong></td>
+                            <td> Bily Estuardo Vallecidos Folgar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carnet:</strong></td>
+                            <td>202401753</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Curso:</strong></td>
+                            <td>Introducción a la Programación y Computación 2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Facultad:</strong></td>
+                            <td>Ingeniería - USAC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semestre:</strong></td>
+                            <td>Primer Semestre del 2026</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header fw-bold" style="background:#1a1a2e; color:white">
+                     Documentación y Repositorio
+                </div>
+                <div class="card-body">
+                    <p>Puedes ver el código fuente y la documentación completa del proyecto en mi GitHub:</p>
+                    <a href="https://github.com/TuUsuario/IPC2_Proyecto2_202401753"
+                       target="_blank" class="btn btn-dark w-100 mb-3">
+                         Ver Repositorio en GitHub
+                    </a>
+                    <hr />
+                    <p class="fw-bold">Herramientas utilizadas:</p>
+                    <ul>
+                        <li>C# con ASP.NET Core MVC</li>
+                        <li>Graphviz para visualizaciones</li>
+                        <li>TDAs implementados por el estudiante</li>
+                        <li>XML para entrada y salida de datos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header fw-bold" style="background:#1a1a2e; color:white">
+                     ¿Cómo usar el sistema?
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li class="mb-2"><strong>Cargar XML:</strong> Carga el archivo de configuración con drones, sistemas y mensajes.</li>
+                        <li class="mb-2"><strong>Drones:</strong> Visualiza el listado de drones ordenado alfabéticamente o agrega nuevos.</li>
+                        <li class="mb-2"><strong>Sistemas de Drones:</strong> Visualiza gráficamente los sistemas de drones usando Graphviz.</li>
+                        <li class="mb-2"><strong>Mensajes:</strong> Ver el listado de mensajes, selecciona uno para ver el tiempo óptimo y el diagrama de instrucciones.</li>
+                        <li class="mb-2"><strong>Generar XML:</strong> Genera el archivo de salida con todos los resultados calculados.</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
 </div>
