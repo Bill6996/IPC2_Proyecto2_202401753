@@ -1,0 +1,48 @@
+﻿@using MD_IPC2_Proyecto2_202401753.Models.Entidades
+@using MD_IPC2_Proyecto2_202401753.Models.TDA
+@{
+    ViewData["Title"] = "Mensajes";
+    ListaEnlazada lista = ViewBag.Lista;
+}
+<div class="container mt-4">
+    <h2>✉️ Gestión de Mensajes</h2>
+    <hr />
+
+    @if (lista == null || lista.EstaVacia())
+    {
+        <p class="text-muted">No hay mensajes registrados.</p>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre Mensaje</th>
+                    <th>Sistema de Drones</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    Nodo actual = lista.ObtenerCabeza();
+                    while (actual != null)
+                    {
+                        Mensaje m = (Mensaje)actual.Dato;
+                        <tr>
+                            <td>@m.Nombre</td>
+                            <td>@m.NombreSistemaDrones</td>
+                            <td>
+                                <a href="/Home/VerMensaje?nombre=@m.Nombre"
+                                   class="btn btn-sm btn-primary">
+                                    Ver Instrucciones
+                                </a>
+                            </td>
+                        </tr>
+                        actual = actual.Siguiente;
+                    }
+                }
+            </tbody>
+        </table>
+    }
+    <a href="/" class="btn btn-secondary">Volver</a>
+</div>

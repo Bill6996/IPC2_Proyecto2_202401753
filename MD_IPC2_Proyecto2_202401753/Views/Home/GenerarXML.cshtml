@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Generar XML";
+}
+<div class="container mt-4">
+    <h2>💾 Generar XML de Salida</h2>
+    <hr />
+    @if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.Mensaje
+        </div>
+        <a href="/Home/DescargarXML" class="btn btn-success">⬇️ Descargar salida.xml</a>
+    }
+    else
+    {
+        <a href="/Home/GenerarXML" class="btn btn-primary">Generar XML ahora</a>
+    }
+    <a href="/" class="btn btn-secondary ms-2">Volver</a>
+</div>

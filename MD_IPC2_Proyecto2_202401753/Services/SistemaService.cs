@@ -178,6 +178,7 @@ namespace MD_IPC2_Proyecto2_202401753.Services
             ListaEnlazada instrucciones = mensaje.Instrucciones;
             int totalInstrucciones = instrucciones.Tamanio();
 
+            // Inicializar alturas actuales de cada dron en 0
             ListaEnlazada nombresDrones = new ListaEnlazada();
             ListaEnlazada alturasDrones = new ListaEnlazada();
 
@@ -202,7 +203,10 @@ namespace MD_IPC2_Proyecto2_202401753.Services
                 int indice = ObtenerIndiceDron(nombresDrones, dronObjetivo);
                 int alturaActual = (int)alturasDrones.Obtener(indice);
 
+                // Calcular cuántos segundos necesita el dron objetivo para llegar
                 int diferencia = Math.Abs(alturaObjetivo - alturaActual);
+                // Si ya está en la altura correcta solo necesita 1 segundo (emitir luz)
+                // Si necesita moverse: diferencia segundos moviéndose + 1 emitir luz
                 int segundosNecesarios = diferencia + 1;
 
                 for (int t = 0; t < segundosNecesarios; t++)
@@ -216,11 +220,12 @@ namespace MD_IPC2_Proyecto2_202401753.Services
                     {
                         string nomDron = (string)nodoDron.Dato;
                         int altDron = (int)alturasDrones.Obtener(idx);
-
                         string accion;
+
                         if (nomDron == dronObjetivo)
                         {
-                            if (t == segundosNecesarios - 1)
+                            bool esUltimoSegundo = (t == segundosNecesarios - 1);
+                            if (esUltimoSegundo)
                             {
                                 accion = "Emitir luz";
                                 ActualizarAltura(alturasDrones, idx, alturaObjetivo);
@@ -239,13 +244,17 @@ namespace MD_IPC2_Proyecto2_202401753.Services
                                 }
                                 else
                                 {
+                                    // Ya está en la altura, solo espera antes de emitir
                                     accion = "Esperar";
                                 }
                             }
                         }
                         else
                         {
-                            accion = "Esperar";
+                            // Los demás drones se mueven anticipándose a su próxima instrucción
+                            accion = MoverDronAnticipado(nombresDrones, alturasDrones,
+                                                         instrucciones, i, nomDron,
+                                                         idx, altDron);
                         }
 
                         accionTiempo.AgregarAccion(nomDron, accion);
@@ -259,8 +268,46 @@ namespace MD_IPC2_Proyecto2_202401753.Services
 
             resultado.TiempoOptimo = tiempoActual;
             resultado.MensajeRecibido = DecodificarMensaje(mensaje, sistema);
-
             return resultado;
+        }
+
+        // Mueve un dron hacia su próxima instrucción anticipadamente
+        private string MoverDronAnticipado(ListaEnlazada nombresDrones,
+                                            ListaEnlazada alturasDrones,
+                                            ListaEnlazada instrucciones,
+                                            int instruccionActual,
+                                            string nomDron,
+                                            int idx,
+                                            int altDron)
+        {
+            // Buscar la próxima instrucción de este dron
+            int proxAltura = -1;
+            for (int j = instruccionActual + 1; j < instrucciones.Tamanio(); j++)
+            {
+                Instruccion sig = (Instruccion)instrucciones.Obtener(j);
+                if (sig.NombreDron == nomDron)
+                {
+                    proxAltura = sig.Altura;
+                    break;
+                }
+            }
+
+            if (proxAltura == -1)
+                return "Esperar"; // No tiene más instrucciones
+
+            // Moverse anticipadamente hacia la próxima altura
+            if (altDron < proxAltura)
+            {
+                ActualizarAltura(alturasDrones, idx, altDron + 1);
+                return "Subir";
+            }
+            else if (altDron > proxAltura)
+            {
+                ActualizarAltura(alturasDrones, idx, altDron - 1);
+                return "Bajar";
+            }
+
+            return "Esperar";
         }
 
         private int ObtenerIndiceDron(ListaEnlazada nombres, string nombreBuscado)

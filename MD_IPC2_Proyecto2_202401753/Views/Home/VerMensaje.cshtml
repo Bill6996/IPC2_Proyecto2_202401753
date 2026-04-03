@@ -1,0 +1,42 @@
+﻿@using MD_IPC2_Proyecto2_202401753.Models.Entidades
+@using MD_IPC2_Proyecto2_202401753.Models.TDA
+@{
+    ViewData["Title"] = "Ver Mensaje";
+    ResultadoMensaje resultado = ViewBag.Resultado;
+}
+<div class="container mt-4">
+    <h2>📨 Detalle del Mensaje</h2>
+    <hr />
+    @if (resultado != null)
+    {
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">@resultado.NombreMensaje</h5>
+                <p><strong>Sistema de Drones:</strong> @resultado.NombreSistemaDrones</p>
+                <p>
+                    <strong>Mensaje Recibido:</strong>
+                    <span class="badge bg-success fs-6">@resultado.MensajeRecibido</span>
+                </p>
+                <p>
+                    <strong>Tiempo Óptimo:</strong>
+                    <span class="badge bg-primary fs-6">@resultado.TiempoOptimo segundos</span>
+                </p>
+            </div>
+        </div>
+
+        <h4>📊 Diagrama de Instrucciones (Graphviz)</h4>
+        @if (!string.IsNullOrEmpty(ViewBag.Imagen as string))
+        {
+            <img src="data:image/png;base64,@ViewBag.Imagen"
+                 class="img-fluid border rounded" alt="Instrucciones" />
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                No se pudo generar el grafo. Verifica que Graphviz esté instalado.
+            </div>
+        }
+    }
+    <br /><br />
+    <a href="/Home/Mensajes" class="btn btn-secondary">Volver</a>
+</div>

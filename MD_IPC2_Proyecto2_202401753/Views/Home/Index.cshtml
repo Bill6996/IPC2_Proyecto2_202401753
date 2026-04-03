@@ -1,8 +1,79 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Sistema de Drones";
 }
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h1> Sistema de Drones Encriptados</h1>
+        <p class="lead">Universidad San Carlos de Guatemala - IPC2</p>
+        <hr />
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <a href="/Home/CargarXML" class="text-decoration-none">
+                <div class="card text-white bg-primary h-100">
+                    <div class="card-body text-center">
+                        
+                        <h5>Cargar XML</h5>
+                        <p>Carga el archivo de configuración</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Home/GenerarXML" class="text-decoration-none">
+                <div class="card text-white bg-success h-100">
+                    <div class="card-body text-center">
+                        
+                        <h5>Generar XML</h5>
+                        <p>Genera el archivo de salida</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Home/Drones" class="text-decoration-none">
+                <div class="card text-white bg-warning h-100">
+                    <div class="card-body text-center">
+                    
+                        <h5>Drones</h5>
+                        <p>Gestión de drones</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Home/SistemasDrones" class="text-decoration-none">
+                <div class="card text-white bg-info h-100">
+                    <div class="card-body text-center">
+                        
+                        <h5>Sistemas</h5>
+                        <p>Gestión de sistemas de drones</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Home/Mensajes" class="text-decoration-none">
+                <div class="card text-white bg-danger h-100">
+                    <div class="card-body text-center">
+                      
+                        <h5>Mensajes</h5>
+                        <p>Gestión de mensajes</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/Home/Ayuda" class="text-decoration-none">
+                <div class="card text-white bg-secondary h-100">
+                    <div class="card-body text-center">
+                       
+                        <h5>Ayuda</h5>
+                        <p>Información del estudiante</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

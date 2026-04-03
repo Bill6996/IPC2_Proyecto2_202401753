@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Visualizar Sistema";
+}
+<div class="container mt-4">
+    <h2>📊 Sistema: @ViewBag.Nombre</h2>
+    <hr />
+    @if (!string.IsNullOrEmpty(ViewBag.Imagen as string))
+    {
+        <img src="data:image/png;base64,@ViewBag.Imagen"
+             class="img-fluid border rounded" alt="Grafo del sistema" />
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            No se pudo generar el grafo. Verifica que Graphviz esté instalado.
+        </div>
+    }
+    <br /><br />
+    <a href="/Home/SistemasDrones" class="btn btn-secondary">Volver</a>
+</div>
