@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2987pt" height="548pt" viewBox="0.00 0.00 2987.00 548.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 544)">
+<title>DiagramaClases</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-544 2983.23,-544 2983.23,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_TDA</title>
+<polygon fill="none" stroke="#2980b9" stroke-dasharray="5,2" points="1351.49,-239 1351.49,-408 2340.17,-408 2340.17,-239 1351.49,-239"/>
+<text xml:space="preserve" text-anchor="middle" x="1845.83" y="-391.4" font-family="Arial" font-size="14.00" fill="#2980b9">TDA (Tipos de Datos Abstractos)</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_Entidades</title>
+<polygon fill="none" stroke="#27ae60" stroke-dasharray="5,2" points="1314.33,-8 1314.33,-231 2895.12,-231 2895.12,-8 1314.33,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="2104.72" y="-214.4" font-family="Arial" font-size="14.00" fill="#27ae60">Entidades</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_Resultado</title>
+<polygon fill="none" stroke="#f39c12" stroke-dasharray="5,2" points="1287.75,-416 1287.75,-532 2971.23,-532 2971.23,-416 1287.75,-416"/>
+<text xml:space="preserve" text-anchor="middle" x="2129.49" y="-515.4" font-family="Arial" font-size="14.00" fill="#f39c12">Resultado</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_Servicio</title>
+<polygon fill="none" stroke="#e74c3c" stroke-dasharray="5,2" points="610.52,-154 610.52,-349 1229.94,-349 1229.94,-154 610.52,-154"/>
+<text xml:space="preserve" text-anchor="middle" x="920.23" y="-332.4" font-family="Arial" font-size="14.00" fill="#e74c3c">Servicio (Singleton)</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_Controlador</title>
+<polygon fill="none" stroke="#8e44ad" stroke-dasharray="5,2" points="8,-271 8,-466 527.13,-466 527.13,-271 8,-271"/>
+<text xml:space="preserve" text-anchor="middle" x="267.57" y="-449.4" font-family="Arial" font-size="14.00" fill="#8e44ad">Controlador MVC</text>
+</g>
+<!-- Nodo -->
+<g id="node1" class="node">
+<title>Nodo</title>
+<polygon fill="#d5e8f0" stroke="black" points="2070.14,-293 2070.14,-329 2332.17,-329 2332.17,-293 2070.14,-293"/>
+<text xml:space="preserve" text-anchor="middle" x="2091.29" y="-308" font-family="Arial" font-size="11.00">Nodo</text>
+<polyline fill="none" stroke="black" points="2112.44,-293.6 2112.44,-329"/>
+<text xml:space="preserve" text-anchor="start" x="2120.44" y="-314.6" font-family="Arial" font-size="11.00">+ Dato: object</text>
+<text xml:space="preserve" text-anchor="start" x="2120.44" y="-301.4" font-family="Arial" font-size="11.00">+ Siguiente: Nodo</text>
+<polyline fill="none" stroke="black" points="2216.19,-293.6 2216.19,-329"/>
+<text xml:space="preserve" text-anchor="start" x="2224.19" y="-308" font-family="Arial" font-size="11.00">+ Nodo(dato: object)</text>
+</g>
+<!-- ListaEnlazada -->
+<g id="node2" class="node">
+<title>ListaEnlazada</title>
+<polygon fill="#d5e8f0" stroke="black" points="1359.49,-247.6 1359.49,-374.4 1791.16,-374.4 1791.16,-247.6 1359.49,-247.6"/>
+<text xml:space="preserve" text-anchor="middle" x="1402.05" y="-307.7" font-family="Arial" font-size="11.00">ListaEnlazada</text>
+<polyline fill="none" stroke="black" points="1444.6,-247.6 1444.6,-374.4"/>
+<text xml:space="preserve" text-anchor="start" x="1452.6" y="-314.3" font-family="Arial" font-size="11.00">- cabeza: Nodo</text>
+<text xml:space="preserve" text-anchor="start" x="1452.6" y="-301.1" font-family="Arial" font-size="11.00">- tamanio: int</text>
+<polyline fill="none" stroke="black" points="1535.2,-247.6 1535.2,-374.4"/>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-360.5" font-family="Arial" font-size="11.00">+ Agregar(dato: object): void</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-347.3" font-family="Arial" font-size="11.00">+ Obtener(indice: int): object</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-334.1" font-family="Arial" font-size="11.00">+ Eliminar(indice: int): void</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-320.9" font-family="Arial" font-size="11.00">+ Contiene(nombre: string, func): bool</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-307.7" font-family="Arial" font-size="11.00">+ BuscarPorNombre(nombre: string, func): object</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-294.5" font-family="Arial" font-size="11.00">+ OrdenarAlfabeticamente(func): void</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-281.3" font-family="Arial" font-size="11.00">+ ObtenerCabeza(): Nodo</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-268.1" font-family="Arial" font-size="11.00">+ EstaVacia(): bool</text>
+<text xml:space="preserve" text-anchor="start" x="1543.2" y="-254.9" font-family="Arial" font-size="11.00">+ Tamanio(): int</text>
+</g>
+<!-- ListaEnlazada&#45;&gt;Nodo -->
+<g id="edge1" class="edge">
+<title>ListaEnlazada-&gt;Nodo</title>
+<path fill="none" stroke="#2980b9" d="M1791.45,-311C1879.22,-311 1978.34,-311 2056.99,-311"/>
+<polygon fill="#2980b9" stroke="#2980b9" points="2057.02,-311 2063.02,-307 2069.02,-311 2063.02,-315 2057.02,-311"/>
+<text xml:space="preserve" text-anchor="middle" x="1905.97" y="-314" font-family="Arial" font-size="10.00">compuesta por</text>
+</g>
+<!-- Dron -->
+<g id="node3" class="node">
+<title>Dron</title>
+<polygon fill="#d5f5e3" stroke="black" points="1440.67,-162 1440.67,-198 1709.98,-198 1709.98,-162 1440.67,-162"/>
+<text xml:space="preserve" text-anchor="middle" x="1460.59" y="-177" font-family="Arial" font-size="11.00">Dron</text>
+<polyline fill="none" stroke="black" points="1480.51,-162.6 1480.51,-198"/>
+<text xml:space="preserve" text-anchor="start" x="1488.51" y="-183.6" font-family="Arial" font-size="11.00">+ Nombre: string</text>
+<text xml:space="preserve" text-anchor="start" x="1488.51" y="-170.4" font-family="Arial" font-size="11.00">+ AlturaActual: int</text>
+<polyline fill="none" stroke="black" points="1583.03,-162.6 1583.03,-198"/>
+<text xml:space="preserve" text-anchor="start" x="1591.03" y="-177" font-family="Arial" font-size="11.00">+ Dron(nombre: string)</text>
+</g>
+<!-- Altura -->
+<g id="node4" class="node">
+<title>Altura</title>
+<polygon fill="#d5f5e3" stroke="black" points="2595.19,-95 2595.19,-131 2887.12,-131 2887.12,-95 2595.19,-95"/>
+<text xml:space="preserve" text-anchor="middle" x="2617.55" y="-110" font-family="Arial" font-size="11.00">Altura</text>
+<polyline fill="none" stroke="black" points="2639.92,-95.6 2639.92,-131"/>
+<text xml:space="preserve" text-anchor="start" x="2647.92" y="-116.6" font-family="Arial" font-size="11.00">+ Valor: int</text>
+<text xml:space="preserve" text-anchor="start" x="2647.92" y="-103.4" font-family="Arial" font-size="11.00">+ Letra: string</text>
+<polyline fill="none" stroke="black" points="2723.48,-95.6 2723.48,-131"/>
+<text xml:space="preserve" text-anchor="start" x="2731.48" y="-110" font-family="Arial" font-size="11.00">+ Altura(valor: int, letra: string)</text>
+</g>
+<!-- ContenidoDron -->
+<g id="node5" class="node">
+<title>ContenidoDron</title>
+<polygon fill="#d5f5e3" stroke="black" points="1974.16,-95 1974.16,-131 2428.15,-131 2428.15,-95 1974.16,-95"/>
+<text xml:space="preserve" text-anchor="middle" x="2019.16" y="-110" font-family="Arial" font-size="11.00">ContenidoDron</text>
+<polyline fill="none" stroke="black" points="2064.15,-95.6 2064.15,-131"/>
+<text xml:space="preserve" text-anchor="start" x="2072.15" y="-116.6" font-family="Arial" font-size="11.00">+ NombreDron: string</text>
+<text xml:space="preserve" text-anchor="start" x="2072.15" y="-103.4" font-family="Arial" font-size="11.00">+ Alturas: ListaEnlazada</text>
+<polyline fill="none" stroke="black" points="2199.09,-95.6 2199.09,-131"/>
+<text xml:space="preserve" text-anchor="start" x="2207.09" y="-116.6" font-family="Arial" font-size="11.00">+ AgregarAltura(valor: int, letra: string): void</text>
+<text xml:space="preserve" text-anchor="start" x="2207.09" y="-103.4" font-family="Arial" font-size="11.00">+ ObtenerLetraPorAltura(valor: int): string</text>
+</g>
+<!-- ContenidoDron&#45;&gt;Altura -->
+<g id="edge10" class="edge">
+<title>ContenidoDron-&gt;Altura</title>
+<path fill="none" stroke="#27ae60" d="M2428.37,-113C2480.07,-113 2533.94,-113 2582.06,-113"/>
+<polygon fill="#27ae60" stroke="#27ae60" points="2581.92,-113 2587.92,-109 2593.92,-113 2587.92,-117 2581.92,-113"/>
+<text xml:space="preserve" text-anchor="middle" x="2482.17" y="-116" font-family="Arial" font-size="10.00">contiene</text>
+</g>
+<!-- SistemaDrones -->
+<g id="node6" class="node">
+<title>SistemaDrones</title>
+<polygon fill="#d5f5e3" stroke="black" points="1322.33,-82.6 1322.33,-143.4 1828.32,-143.4 1828.32,-82.6 1322.33,-82.6"/>
+<text xml:space="preserve" text-anchor="middle" x="1367.93" y="-109.7" font-family="Arial" font-size="11.00">SistemaDrones</text>
+<polyline fill="none" stroke="black" points="1413.53,-82.6 1413.53,-143.4"/>
+<text xml:space="preserve" text-anchor="start" x="1421.53" y="-129.5" font-family="Arial" font-size="11.00">+ Nombre: string</text>
+<text xml:space="preserve" text-anchor="start" x="1421.53" y="-116.3" font-family="Arial" font-size="11.00">+ AlturaMaxima: int</text>
+<text xml:space="preserve" text-anchor="start" x="1421.53" y="-103.1" font-family="Arial" font-size="11.00">+ CantidadDrones: int</text>
+<text xml:space="preserve" text-anchor="start" x="1421.53" y="-89.9" font-family="Arial" font-size="11.00">+ Contenido: ListaEnlazada</text>
+<polyline fill="none" stroke="black" points="1564.37,-82.6 1564.37,-143.4"/>
+<text xml:space="preserve" text-anchor="start" x="1572.37" y="-116.3" font-family="Arial" font-size="11.00">+ AgregarContenidoDron(cd: ContenidoDron): void</text>
+<text xml:space="preserve" text-anchor="start" x="1572.37" y="-103.1" font-family="Arial" font-size="11.00">+ ObtenerLetra(dron: string, altura: int): string</text>
+</g>
+<!-- SistemaDrones&#45;&gt;ContenidoDron -->
+<g id="edge9" class="edge">
+<title>SistemaDrones-&gt;ContenidoDron</title>
+<path fill="none" stroke="#27ae60" d="M1828.71,-113C1872.29,-113 1917.49,-113 1960.72,-113"/>
+<polygon fill="#27ae60" stroke="#27ae60" points="1960.86,-113 1966.86,-109 1972.86,-113 1966.86,-117 1960.86,-113"/>
+<text xml:space="preserve" text-anchor="middle" x="1905.97" y="-116" font-family="Arial" font-size="10.00">contiene</text>
+</g>
+<!-- Instruccion -->
+<g id="node7" class="node">
+<title>Instruccion</title>
+<polygon fill="#d5f5e3" stroke="black" points="2009.64,-22 2009.64,-58 2392.67,-58 2392.67,-22 2009.64,-22"/>
+<text xml:space="preserve" text-anchor="middle" x="2044.24" y="-37" font-family="Arial" font-size="11.00">Instruccion</text>
+<polyline fill="none" stroke="black" points="2078.83,-22.6 2078.83,-58"/>
+<text xml:space="preserve" text-anchor="start" x="2086.83" y="-43.6" font-family="Arial" font-size="11.00">+ NombreDron: string</text>
+<text xml:space="preserve" text-anchor="start" x="2086.83" y="-30.4" font-family="Arial" font-size="11.00">+ Altura: int</text>
+<polyline fill="none" stroke="black" points="2200.29,-22.6 2200.29,-58"/>
+<text xml:space="preserve" text-anchor="start" x="2208.29" y="-37" font-family="Arial" font-size="11.00">+ Instruccion(dron: string, altura: int)</text>
+</g>
+<!-- Mensaje -->
+<g id="node8" class="node">
+<title>Mensaje</title>
+<polygon fill="#d5f5e3" stroke="black" points="1331.23,-16.2 1331.23,-63.8 1819.42,-63.8 1819.42,-16.2 1331.23,-16.2"/>
+<text xml:space="preserve" text-anchor="middle" x="1360.02" y="-36.7" font-family="Arial" font-size="11.00">Mensaje</text>
+<polyline fill="none" stroke="black" points="1388.81,-16.2 1388.81,-63.8"/>
+<text xml:space="preserve" text-anchor="start" x="1396.81" y="-49.9" font-family="Arial" font-size="11.00">+ Nombre: string</text>
+<text xml:space="preserve" text-anchor="start" x="1396.81" y="-36.7" font-family="Arial" font-size="11.00">+ NombreSistemaDrones: string</text>
+<text xml:space="preserve" text-anchor="start" x="1396.81" y="-23.5" font-family="Arial" font-size="11.00">+ Instrucciones: ListaEnlazada</text>
+<polyline fill="none" stroke="black" points="1561.61,-16.2 1561.61,-63.8"/>
+<text xml:space="preserve" text-anchor="start" x="1569.61" y="-36.7" font-family="Arial" font-size="11.00">+ AgregarInstruccion(dron: string, altura: int): void</text>
+</g>
+<!-- Mensaje&#45;&gt;Instruccion -->
+<g id="edge11" class="edge">
+<title>Mensaje-&gt;Instruccion</title>
+<path fill="none" stroke="#27ae60" d="M1819.75,-40C1878.24,-40 1940.11,-40 1996.57,-40"/>
+<polygon fill="#27ae60" stroke="#27ae60" points="1996.38,-40 2002.38,-36 2008.38,-40 2002.38,-44 1996.38,-40"/>
+<text xml:space="preserve" text-anchor="middle" x="1905.97" y="-43" font-family="Arial" font-size="10.00">contiene</text>
+</g>
+<!-- ParDronAccion -->
+<g id="node9" class="node">
+<title>ParDronAccion</title>
+<polygon fill="#fef9e7" stroke="black" points="2519.07,-444 2519.07,-480 2963.23,-480 2963.23,-444 2519.07,-444"/>
+<text xml:space="preserve" text-anchor="middle" x="2564.06" y="-459" font-family="Arial" font-size="11.00">ParDronAccion</text>
+<polyline fill="none" stroke="black" points="2609.05,-444.6 2609.05,-480"/>
+<text xml:space="preserve" text-anchor="start" x="2617.05" y="-465.6" font-family="Arial" font-size="11.00">+ NombreDron: string</text>
+<text xml:space="preserve" text-anchor="start" x="2617.05" y="-452.4" font-family="Arial" font-size="11.00">+ Accion: string</text>
+<polyline fill="none" stroke="black" points="2730.5,-444.6 2730.5,-480"/>
+<text xml:space="preserve" text-anchor="start" x="2738.5" y="-459" font-family="Arial" font-size="11.00">+ ParDronAccion(dron: string, accion: string)</text>
+</g>
+<!-- AccionTiempo -->
+<g id="node10" class="node">
+<title>AccionTiempo</title>
+<polygon fill="#fef9e7" stroke="black" points="1957.04,-444 1957.04,-480 2445.26,-480 2445.26,-444 1957.04,-444"/>
+<text xml:space="preserve" text-anchor="middle" x="1999.89" y="-459" font-family="Arial" font-size="11.00">AccionTiempo</text>
+<polyline fill="none" stroke="black" points="2042.74,-444.6 2042.74,-480"/>
+<text xml:space="preserve" text-anchor="start" x="2050.74" y="-465.6" font-family="Arial" font-size="11.00">+ Tiempo: int</text>
+<text xml:space="preserve" text-anchor="start" x="2050.74" y="-452.4" font-family="Arial" font-size="11.00">+ Acciones: ListaEnlazada</text>
+<polyline fill="none" stroke="black" points="2188.07,-444.6 2188.07,-480"/>
+<text xml:space="preserve" text-anchor="start" x="2196.07" y="-459" font-family="Arial" font-size="11.00">+ AgregarAccion(dron: string, accion: string): void</text>
+</g>
+<!-- AccionTiempo&#45;&gt;ParDronAccion -->
+<g id="edge13" class="edge">
+<title>AccionTiempo-&gt;ParDronAccion</title>
+<path fill="none" stroke="#27ae60" d="M2445.58,-462C2465.55,-462 2485.71,-462 2505.61,-462"/>
+<polygon fill="#27ae60" stroke="#27ae60" points="2505.75,-462 2511.75,-458 2517.75,-462 2511.75,-466 2505.75,-462"/>
+<text xml:space="preserve" text-anchor="middle" x="2482.17" y="-465" font-family="Arial" font-size="10.00">contiene</text>
+</g>
+<!-- ResultadoMensaje -->
+<g id="node11" class="node">
+<title>ResultadoMensaje</title>
+<polygon fill="#fef9e7" stroke="black" points="1295.75,-425 1295.75,-499 1854.9,-499 1854.9,-425 1295.75,-425"/>
+<text xml:space="preserve" text-anchor="middle" x="1349.31" y="-458.7" font-family="Arial" font-size="11.00">ResultadoMensaje</text>
+<polyline fill="none" stroke="black" points="1402.86,-425 1402.86,-499"/>
+<text xml:space="preserve" text-anchor="start" x="1410.86" y="-485.1" font-family="Arial" font-size="11.00">+ NombreMensaje: string</text>
+<text xml:space="preserve" text-anchor="start" x="1410.86" y="-471.9" font-family="Arial" font-size="11.00">+ NombreSistemaDrones: string</text>
+<text xml:space="preserve" text-anchor="start" x="1410.86" y="-458.7" font-family="Arial" font-size="11.00">+ TiempoOptimo: int</text>
+<text xml:space="preserve" text-anchor="start" x="1410.86" y="-445.5" font-family="Arial" font-size="11.00">+ MensajeRecibido: string</text>
+<text xml:space="preserve" text-anchor="start" x="1410.86" y="-432.3" font-family="Arial" font-size="11.00">+ AccionesPorTiempo: ListaEnlazada</text>
+<polyline fill="none" stroke="black" points="1601.99,-425 1601.99,-499"/>
+<text xml:space="preserve" text-anchor="start" x="1609.99" y="-458.7" font-family="Arial" font-size="11.00">+ AgregarAccionTiempo(at: AccionTiempo): void</text>
+</g>
+<!-- ResultadoMensaje&#45;&gt;AccionTiempo -->
+<g id="edge12" class="edge">
+<title>ResultadoMensaje-&gt;AccionTiempo</title>
+<path fill="none" stroke="#27ae60" d="M1855.4,-462C1884.79,-462 1914.57,-462 1943.69,-462"/>
+<polygon fill="#27ae60" stroke="#27ae60" points="1943.66,-462 1949.66,-458 1955.66,-462 1949.66,-466 1943.66,-462"/>
+<text xml:space="preserve" text-anchor="middle" x="1905.97" y="-465" font-family="Arial" font-size="10.00">contiene</text>
+</g>
+<!-- SistemaService -->
+<g id="node12" class="node">
+<title>SistemaService</title>
+<polygon fill="#fadbd8" stroke="black" points="618.52,-162.4 618.52,-315.6 1221.94,-315.6 1221.94,-162.4 618.52,-162.4"/>
+<text xml:space="preserve" text-anchor="middle" x="664.73" y="-235.7" font-family="Arial" font-size="11.00">SistemaService</text>
+<polyline fill="none" stroke="black" points="710.93,-162.4 710.93,-315.6"/>
+<text xml:space="preserve" text-anchor="start" x="718.93" y="-255.5" font-family="Arial" font-size="11.00">- listaDrones: ListaEnlazada</text>
+<text xml:space="preserve" text-anchor="start" x="718.93" y="-242.3" font-family="Arial" font-size="11.00">- listaSistemasDrones: ListaEnlazada</text>
+<text xml:space="preserve" text-anchor="start" x="718.93" y="-229.1" font-family="Arial" font-size="11.00">- listaMensajes: ListaEnlazada</text>
+<text xml:space="preserve" text-anchor="start" x="718.93" y="-215.9" font-family="Arial" font-size="11.00">- instancia: SistemaService</text>
+<polyline fill="none" stroke="black" points="909.13,-162.4 909.13,-315.6"/>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-301.7" font-family="Arial" font-size="11.00">+ ObtenerInstancia(): SistemaService</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-288.5" font-family="Arial" font-size="11.00">+ AgregarDron(nombre: string): bool</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-275.3" font-family="Arial" font-size="11.00">+ BuscarDron(nombre: string): Dron</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-262.1" font-family="Arial" font-size="11.00">+ AgregarSistemaDrones(s: SistemaDrones): bool</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-248.9" font-family="Arial" font-size="11.00">+ BuscarSistemaDrones(nombre: string): SistemaDrones</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-235.7" font-family="Arial" font-size="11.00">+ AgregarMensaje(m: Mensaje): bool</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-222.5" font-family="Arial" font-size="11.00">+ BuscarMensaje(nombre: string): Mensaje</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-209.3" font-family="Arial" font-size="11.00">+ CargarXML(ruta: string): string</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-196.1" font-family="Arial" font-size="11.00">+ CalcularTiempoOptimo(nombre: string): ResultadoMensaje</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-182.9" font-family="Arial" font-size="11.00">+ GenerarXMLSalida(ruta: string): string</text>
+<text xml:space="preserve" text-anchor="start" x="917.13" y="-169.7" font-family="Arial" font-size="11.00">+ Inicializar(): void</text>
+</g>
+<!-- SistemaService&#45;&gt;ListaEnlazada -->
+<g id="edge2" class="edge">
+<title>SistemaService-&gt;ListaEnlazada</title>
+<path fill="none" stroke="#e74c3c" stroke-dasharray="5,2" d="M1221.97,-272.15C1264.44,-276.84 1307.5,-281.58 1348.25,-286.08"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" points="1358.18,-287.17 1347.75,-290.55 1354.43,-286.76 1348.24,-286.08 1348.24,-286.08 1348.24,-286.08 1354.43,-286.76 1348.74,-281.6 1358.18,-287.17"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.85" y="-281.24" font-family="Arial" font-size="10.00">usa x3</text>
+</g>
+<!-- SistemaService&#45;&gt;Dron -->
+<g id="edge3" class="edge">
+<title>SistemaService-&gt;Dron</title>
+<path fill="none" stroke="#e74c3c" stroke-dasharray="5,2" d="M1221.97,-211.83C1294.13,-205.31 1367.99,-198.64 1429.32,-193.1"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" points="1439.02,-192.22 1429.46,-197.61 1435.25,-192.56 1429.06,-193.12 1429.06,-193.12 1429.06,-193.12 1435.25,-192.56 1428.65,-188.64 1439.02,-192.22"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.85" y="-212.5" font-family="Arial" font-size="10.00">gestiona</text>
+</g>
+<!-- SistemaService&#45;&gt;SistemaDrones -->
+<g id="edge4" class="edge">
+<title>SistemaService-&gt;SistemaDrones</title>
+<path fill="none" stroke="#e74c3c" stroke-dasharray="5,2" d="M1222.29,-166.03C1244.39,-161.39 1266.39,-156.99 1287.75,-153 1301.33,-150.47 1315.29,-148.01 1329.41,-145.66"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" points="1339.02,-144.07 1329.89,-150.14 1335.29,-144.69 1329.16,-145.7 1329.16,-145.7 1329.16,-145.7 1335.29,-144.69 1328.42,-141.26 1339.02,-144.07"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.85" y="-163.8" font-family="Arial" font-size="10.00">gestiona</text>
+</g>
+<!-- SistemaService&#45;&gt;Mensaje -->
+<g id="edge5" class="edge">
+<title>SistemaService-&gt;Mensaje</title>
+<path fill="none" stroke="#e74c3c" stroke-dasharray="5,2" d="M1063.6,-162.04C1129.93,-129.48 1211,-94.24 1287.75,-73 1298.36,-70.06 1309.26,-67.39 1320.32,-64.95"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" points="1329.78,-62.94 1320.93,-69.42 1326.08,-63.73 1319.99,-65.02 1319.99,-65.02 1319.99,-65.02 1326.08,-63.73 1319.06,-60.62 1329.78,-62.94"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.85" y="-88.71" font-family="Arial" font-size="10.00">gestiona</text>
+</g>
+<!-- SistemaService&#45;&gt;ResultadoMensaje -->
+<g id="edge6" class="edge">
+<title>SistemaService-&gt;ResultadoMensaje</title>
+<path fill="none" stroke="#e74c3c" stroke-dasharray="5,2" d="M1199.24,-315.9C1228.42,-332.49 1255.49,-352.61 1277.75,-377 1288.66,-388.95 1275.72,-401.18 1287.75,-412 1290.13,-414.14 1292.56,-416.2 1295.05,-418.19"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" points="1302.73,-423.95 1292.03,-421.55 1299.7,-421.68 1294.73,-417.95 1294.73,-417.95 1294.73,-417.95 1299.7,-421.68 1297.43,-414.35 1302.73,-423.95"/>
+<text xml:space="preserve" text-anchor="middle" x="1258.85" y="-380" font-family="Arial" font-size="10.00">produce</text>
+</g>
+<!-- HomeController -->
+<g id="node13" class="node">
+<title>HomeController</title>
+<polygon fill="#e8daef" stroke="black" points="16,-279.4 16,-432.6 519.13,-432.6 519.13,-279.4 16,-279.4"/>
+<text xml:space="preserve" text-anchor="middle" x="62.51" y="-352.7" font-family="Arial" font-size="11.00">HomeController</text>
+<polyline fill="none" stroke="black" points="109.03,-279.4 109.03,-432.6"/>
+<text xml:space="preserve" text-anchor="start" x="117.03" y="-352.7" font-family="Arial" font-size="11.00">- _servicio: SistemaService</text>
+<polyline fill="none" stroke="black" points="257.68,-279.4 257.68,-432.6"/>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-418.7" font-family="Arial" font-size="11.00">+ Index(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-405.5" font-family="Arial" font-size="11.00">+ CargarXML(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-392.3" font-family="Arial" font-size="11.00">+ GenerarXML(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-379.1" font-family="Arial" font-size="11.00">+ Drones(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-365.9" font-family="Arial" font-size="11.00">+ AgregarDron(nombre: string): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-352.7" font-family="Arial" font-size="11.00">+ SistemasDrones(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-339.5" font-family="Arial" font-size="11.00">+ VisualizarSistema(nombre: string): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-326.3" font-family="Arial" font-size="11.00">+ Mensajes(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-313.1" font-family="Arial" font-size="11.00">+ VerMensaje(nombre: string): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-299.9" font-family="Arial" font-size="11.00">+ Ayuda(): IActionResult</text>
+<text xml:space="preserve" text-anchor="start" x="265.68" y="-286.7" font-family="Arial" font-size="11.00">+ Inicializar(): IActionResult</text>
+</g>
+<!-- HomeController&#45;&gt;ResultadoMensaje -->
+<g id="edge8" class="edge">
+<title>HomeController-&gt;ResultadoMensaje</title>
+<path fill="none" stroke="#8e44ad" stroke-dasharray="5,2" d="M519.56,-376.38C738.14,-394.12 1055.1,-419.85 1284.45,-438.47"/>
+<polygon fill="#8e44ad" stroke="#8e44ad" points="1294.09,-439.25 1283.76,-442.93 1290.32,-438.94 1284.12,-438.44 1284.12,-438.44 1284.12,-438.44 1290.32,-438.94 1284.48,-433.96 1294.09,-439.25"/>
+<text xml:space="preserve" text-anchor="middle" x="920.23" y="-436.73" font-family="Arial" font-size="10.00">usa</text>
+</g>
+<!-- HomeController&#45;&gt;SistemaService -->
+<g id="edge7" class="edge">
+<title>HomeController-&gt;SistemaService</title>
+<path fill="none" stroke="#8e44ad" stroke-dasharray="5,2" d="M519.2,-310.93C548.05,-305.74 577.74,-300.41 607.28,-295.09"/>
+<polygon fill="#8e44ad" stroke="#8e44ad" points="616.95,-293.36 607.9,-299.55 613.23,-294.02 607.11,-295.12 607.11,-295.12 607.11,-295.12 613.23,-294.02 606.31,-290.7 616.95,-293.36"/>
+<text xml:space="preserve" text-anchor="middle" x="568.82" y="-309.25" font-family="Arial" font-size="10.00">&lt;&lt;singleton&gt;&gt;</text>
+</g>
+</g>
+</svg>
